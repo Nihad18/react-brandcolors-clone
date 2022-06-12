@@ -1,3 +1,19 @@
+<h1 align="center">{Brandcolors-Clone}</h1>
+<div align="center">
+  <h3>
+    <a href="https://brandcolors-clone.netlify.app">
+      Demo
+    </a>
+  </h3>
+</div>
+
+### Idea : https://brandcolors.net/
+
+## Contact
+
+- GitHub [@Nihad18](https://github.com/Nihad18/)
+- Instagram [@nihad19_19](https://www.instagram.com/nihad19_19/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

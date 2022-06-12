@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: white;
+}
+
+.App {
+  display: flex;
+  height: 100%;
+  @media screen and (max-width: 1023px) {
+    flex-direction: column;
+  }
+}
+
+aside.sidebar {
+  @media screen and (min-width: 1024px) {
+    flex-shrink: 0;
+    width: 350px;
+    padding: 30px 40px;
+    border-right: solid 1px #e0e0e0;
+    height: 100vh;
+  }
+  @media screen and (max-width: 1023px) {
+    padding-bottom: 1rem;
+    border-bottom: solid 1px #e0e0e0;
+  }
+  @media screen and (max-width: 1023px) {
+    div.description {
+      display: none;
+    }
+    p.button {
+      margin-left: 30px;
+    }
+  }
+  div.logo {
+    display: flex;
+    margin-left: -20px;
+    margin-bottom: 20px;
+    @media screen and (max-width: 1024px) {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+    p {
+      font-size: 22px;
+      line-height: 40px;
+      color: #263238;
+    }
+    p:hover {
+      color: blue;
+    }
+  }
+  div.description {
+    width: 280px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #6a757a;
+  }
+  p.button {
+    cursor: pointer;
+    color: #263238;
+    width: 170px;
+    font-weight: bold;
+    @media screen and (max-width: 768px) {
+      margin-left: 16px;
+    }
+  }
+  p.button:hover {
+    color: blue;
+  }
+}
+//!-------POP UP-----------
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  @media screen and (max-width: 600px) {
+    max-width: 360px;
+  }
+  margin: auto;
+  padding: 4vw;
+  background-color: #fff;
+  -webkit-box-shadow: 0 10px 60px rgb(0 0 0 / 10%);
+  box-shadow: 0 10px 60px rgb(0 0 0 / 10%);
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    padding: 1rem;
+    width: 24px;
+    height: 24px;
+    border: none;
+    color: black;
+    &__icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      fill: black;
+    }
+  }
+  .header-text {
+    margin-bottom: 0.7em;
+    font-size: 24px;
+    font-weight: bold;
+    color: #263238;
+  }
+  .content {
+    .modal-p {
+      margin-bottom: 1em;
+      color: #607d8b;
+      b {
+        color: rgba(0, 0, 0, 0.9);
+      }
+    }
+  }
+}
+
+//*---------SOCIAL MEDIA BAR---------
+div.socialMediaBar {
+  width: 100px;
+  height: 10px;
+  margin-top: -5px;
+  margin-left: 8px;
+  ul {
+    box-sizing: border-box;
+    list-style-type: none;
+    display: flex;
+
+    li {
+      margin: 0 0.2rem;
+
+      a {
+        font-size: 30px;
+        :hover{
+          opacity: 0.9;
+        }
+      }
+      a.instagram {
+        color: #e1306c;
+      }
+      a.github {
+        color: black;
+      }
+      a.linkedin{
+        color: blue;
+      }
+    }
+  }
+}
+//*----------------------------------
+
+//!---------MAIN CONTENT-----------
+.main {
+  flex: 1 1;
+  overflow: auto;
+  background: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  // HEADER
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-bottom: solid 1px #e0e0e0;
+  }
+  //-------- DOWNLOAD COMPONENT----------
+  .group {
+    display: none;
+    @media screen and (min-width: 736px) {
+      display: flex;
+      margin-right: 15px;
+      padding-right: 15px;
+      &__icon {
+        font-size: 20px;
+        margin-right: 10px;
+        margin-top: 3px;
+        color: black;
+        @media screen and (max-width: 1100px) {
+          font-size: 18px;
+          margin-right: 8px;
+        }
+      }
+      .toolbarTitle {
+        margin-top: 3px;
+        color: black;
+        @media screen and (max-width: 1100px) {
+          font-size: 12px;
+        }
+      }
+      select.select {
+        background-color: #e9eef080;
+        text-align: center;
+        margin-right: 5px;
+        margin-top: 2px;
+        height: 20px;
+        color: black;
+        font-weight: 700;
+      }
+    }
+  }
+  .passive {
+    user-select: none;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  // -------------------------------------
+
+  // SEARCH
+  .search {
+    display: flex;
+    height: 50px;
+    @media (min-width: 1023px) and (max-width: 1080px) {
+      width: 100px;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      font-size: 14px;
+      line-height: 24px;
+      z-index: 10;
+    }
+    @media screen and (max-width: 1024px) {
+      position: relative;
+      height: auto;
+    }
+    label {
+      margin-top: 8px;
+    }
+    &-icon {
+      font-size: 20px;
+    }
+    &-input {
+      border: none;
+      margin-left: 10px;
+    }
+  }
+  //!BRAND COMPONENT
+  .brand {
+    border-bottom: 1px solid #e0e0e0;
+    :last-child {
+      border-bottom: none;
+    }
+    background-color: white;
+    padding: 5px;
+    @media screen and (min-width: 640px) {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    .selectedIcon {
+      position: relative;
+      top: 2px;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .displayNone {
+      display: none;
+    }
+    &__title {
+      font-size: 20px;
+      font-weight: 500;
+      color: #263238;
+      width: 150px;
+      user-select: none;
+      cursor: pointer;
+      @media screen and (max-width: 768px) {
+        margin-left: 4px;
+      }
+    }
+    .selectedTitle {
+      font-weight: bold;
+    }
+    &__color {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 75%;
+      cursor: pointer;
+      @media screen and (max-width: 640px) {
+        width: 100%;
+      }
+
+      li {
+        width: 60px;
+        @media screen and (max-width: 1024px) {
+          width: 40px;
+        }
+        border: 1px solid rgba(0, 0, 0, 0.25) !important;
+        margin: 5px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      li:hover > .copyIcon {
+        display: block;
+      }
+      li:hover > .activeClipBoardText {
+        display: block;
+      }
+      .selectedColor {
+        width: 18%;
+        flex-grow: 1;
+      }
+      .copyIcon {
+        display: none;
+        margin-top: 8px;
+        color: white;
+      }
+      .ClipBoardText {
+        display: none;
+      }
+    }
+  }
+}
+//*---------COPY COMPONENT-----------
+.copied {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  padding: 15px;
+  background: rgba(38, 50, 56, 0.75);
+  color: white;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  pointer-events: none;
+  z-index: 20;
+  font-size: 14px;
+}
